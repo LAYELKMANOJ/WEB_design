@@ -4,8 +4,9 @@
 <head>
     <title>Frame Layout</title>
 </head>
-<frameset rows="50%,50%">
-    <frameset cols="50%,50%">
+<frameset rows="60%,50%">
+    <frameset cols="60%,50%">
+    <h> first question</H>
         <frame style="background-color: #ff9999;" name="frame1">
         <frame style="background-color: #99ff99;" name="frame2">
     </frameset>
