@@ -1,50 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Kozhikode</title>
+    <title>Welcome to Idukki</title>
 </head>
 <body>
-    <h1 style="text-align: center;">Welcome to idukki</h1>
+    <h1 style="text-align: center;">Welcome to Idukki</h1>
     <hr>
     <div style="text-align: center;">
-        <a href="https://www.google.com/search?q=Kozhikode" target="_blank">Home</a> | 
-        <a href="https://www.google.com/search?q=History+of+Kozhikode" target="_blank">History</a> | 
-        <a href="https://www.google.com/search?q=Culture+of+Kozhikode" target="_blank">Culture</a> | 
-        <a href="https://www.google.com/search?q=Tourist+Spots+in+Kozhikode" target="_blank">Tourist Spots</a> | 
-        <a href="https://www.google.com/search?q=Contact+Kozhikode" target="_blank">Contact</a>
+        <a href="https://www.google.com/search?q=Idukki" target="_blank">Home</a> | 
+        <a href="https://www.google.com/search?q=History+of+Idukki" target="_blank">History</a> | 
+        <a href="https://www.google.com/search?q=Culture+of+Idukki" target="_blank">Culture</a> | 
+        <a href="https://www.google.com/search?q=Tourist+Spots+in+Idukki" target="_blank">Tourist Spots</a> | 
+        <a href="https://www.google.com/search?q=Contact+Idukki" target="_blank">Contact</a>
     </div>
     <hr>
     <section id="home">
-        <h2>About Kozhikode</h2>
-        <p>Kozhikode, also known as Calicut, is a historic city in Kerala, India. It’s famous for its beautiful beaches, rich cultural heritage, and role in the spice trade.</p>
+        <h2>About Idukki</h2>
+        <p>Idukki, located in the heart of Kerala, India, is an enchanting district known for its lush green landscapes, serene valleys, and towering mountains. Famous for its tea estates, wildlife sanctuaries, and beautiful waterfalls, Idukki is a nature lover's paradise. Its geographic location within the Western Ghats makes it a haven for flora and fauna, and the district is home to several protected areas like the Eravikulam National Park and the Periyar Wildlife Sanctuary. The district's most iconic feature is the Idukki Dam, one of Asia's highest arch dams, which stands as a symbol of the region's natural beauty and its importance in Kerala's power generation.</p>
+        <p>The district is also a prime eco-tourism destination, drawing thousands of tourists each year who come to enjoy the scenic beauty, wildlife, and the rich culture of the region. From adventure activities like trekking and camping to simply relaxing in the cool, misty weather, Idukki offers something for every kind of traveler.</p>
     </section>
     <section id="history">
-        <h2>History of Kozhikode</h2>
-        <p>Kozhikode has a rich history as a major trading hub for spices. It was a prominent center for international trade and cultural exchange.</p>
+        <h2>History of Idukki</h2>
+        <p>Idukki’s history is intertwined with the region’s geographic and natural resources. The area has been historically significant for agriculture, as the fertile land is ideal for the cultivation of tea, coffee, spices, and rubber. The arrival of the British colonialists led to the establishment of large-scale plantations that transformed the landscape and economy of the region. The construction of the Idukki Dam in the 1960s marked a major milestone, providing hydroelectric power to Kerala and contributing to the region's agricultural development.</p>
+        <p>In addition to its agricultural significance, Idukki has been a historically important site for trade and cultural exchanges. The district's strategic location within the Western Ghats also made it a significant area for early settlers and indigenous communities. Idukki is home to various tribal groups, such as the Mannans, Paniyas, and Mullukurumbas, who have their distinct cultures and practices, enriching the region’s diversity.</p>
+        <p>As time progressed, Idukki became known for its focus on environmental conservation. The creation of wildlife sanctuaries and national parks in the region helped preserve its unique biodiversity, making it a hub for eco-tourism and wildlife research.</p>
     </section>
     <section id="culture">
-        <h2>Culture of Kozhikode</h2>
-        <p>The city is known for its vibrant cultural scene, with traditional music, dance, and art forms playing a vital role.</p>
+        <h2>Culture of Idukki</h2>
+        <p>The culture of Idukki is a rich tapestry woven from its indigenous communities, agricultural roots, and traditional Kerala heritage. The district celebrates various festivals that reflect the spirit of the people, including the widely celebrated Onam and Vishu. These festivals are marked by traditional music, dance, and vibrant rituals, with grand feasts and community gatherings that showcase the warmth and hospitality of the region.</p>
+        <p>The region is also known for its classical art forms, including Kathakali, Mohiniyattam, and Theyyam, which are performed during temple festivals and cultural events. The art forms of Idukki reflect the deep connection between nature and spirituality, and many of these performances tell stories from local mythology and religious traditions.</p>
+        <p>In terms of cuisine, Idukki is known for its spicy and flavorful dishes, which include local specialties such as Karimeen Pollichathu (Pearl Spot fish cooked in banana leaves), Puttu (steamed rice cake), Appam (rice pancakes), and Kerala-style curries. The cuisine often incorporates the fresh spices grown in the district, including cardamom, pepper, and cloves, which are locally cultivated and contribute to the unique flavors of Idukki's food.</p>
+        <p>The indigenous tribal communities also have their unique cultural practices, including traditional dances, music, and rituals that are integral to their lifestyle. Their connection with the land and forests is celebrated through their art and customs, which continue to thrive in the region.</p>
     </section>
     <section id="tourist-spots">
-        <h2>Top Attractions</h2>
+        <h2>Top Attractions in Idukki</h2>
         <ul>
-            <li><a href="https://www.google.com/search?q=Kozhikode+Beach" target="_blank">Kozhikode Beach</a></li>
-            <li><a href="https://www.google.com/search?q=Mananchira+Square" target="_blank">Mananchira Square</a></li>
-            <li><a href="https://www.google.com/search?q=Kappad+Beach" target="_blank">Kappad Beach</a></li>
-            <li><a href="https://www.google.com/search?q=Beypore+Port" target="_blank">Beypore Port</a></li>
-            <li><a href="https://www.google.com/search?q=Thusharagiri+Waterfalls" target="_blank">Thusharagiri Waterfalls</a></li>
+            <li><a href="https://www.google.com/search?q=Idukki+Dam" target="_blank">Idukki Dam</a> – The iconic arch dam, surrounded by a stunning landscape, offers picturesque views of the valley and the hills surrounding it.</li>
+            <li><a href="https://www.google.com/search?q=Anamudi+Peak" target="_blank">Anamudi Peak</a> – Standing at 2,695 meters, Anamudi is the highest peak in South India. It is a popular spot for trekkers and nature lovers, offering panoramic views of the surrounding mountains and valleys.</li>
+            <li><a href="https://www.google.com/search?q=Ramakalmedu" target="_blank">Ramakalmedu</a> – A hill station known for its enchanting misty landscapes and panoramic views. Famous for its windmills and the mesmerizing view of the valley below.</li>
+            <li><a href="https://www.google.com/search?q=Cheeyappara+Waterfalls" target="_blank">Cheeyappara Waterfalls</a> – A beautiful seven-step waterfall on the Munnar–Kochi highway, surrounded by lush greenery and tea plantations.</li>
+            <li><a href="https://www.google.com/search?q=Eravikulam+National+Park" target="_blank">Eravikulam National Park</a> – A UNESCO World Heritage site, this park is home to the endangered Nilgiri Tahr and offers some of the most scenic trekking routes in the Western Ghats.</li>
+            <li><a href="https://www.google.com/search?q=Vagamon" target="_blank">Vagamon</a> – Known for its rolling hills, vast meadows, and tea estates, Vagamon is a perfect getaway for those seeking tranquility and adventure.</li>
+            <li><a href="https://www.google.com/search?q=Kulamavu" target="_blank">Kulamavu</a> – A picturesque village with a reservoir, surrounded by rolling hills, making it an ideal spot for nature walks, photography, and peaceful retreats.</li>
+            <li><a href="https://www.google.com/search?q=Periyar+Wildlife+Sanctuary" target="_blank">Periyar Wildlife Sanctuary</a> – Located near Thekkady, this sanctuary is famous for its wildlife, including elephants, tigers, and various bird species, and offers boat rides on the Periyar Lake.</li>
+            <li><a href="https://www.google.com/search?q=Mattupetty+Dam" target="_blank">Mattupetty Dam</a> – A beautiful dam surrounded by lush tea gardens and rolling hills. The area is also known for its boating and picnic spots.</li>
         </ul>
     </section>
     <section id="contact">
         <h3>Contact Information</h3>
-        <p>Email: <a href="mailto:info@visitkozhikode.com">info@visitkozhikode.com</a></p>
+        <p>Email: <a href="mailto:info@visitidukki.com">info@visitidukki.com</a></p>
         <p>Phone: <a href="tel:+919876543211">+91 98765 43211</a></p>
+        <p>Address: Idukki Tourism Office, Idukki, Kerala, India.</p>
     </section>
     <hr>
-    <p style="text-align: center;">&copy; 2025 Welcome to Kozhikode. All rights reserved.</p>
+    <p style="text-align: center;">&copy; 2025 Welcome to Idukki. All rights reserved.</p>
 </body>
 </html>
