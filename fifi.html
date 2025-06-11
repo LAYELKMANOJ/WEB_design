@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scholarly Steps: Your Academic Journey</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif; /* Modern sans-serif font */
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b') no-repeat center center fixed;
+            background-size: cover;
+            color: #ecf0f1; /* Light text color for contrast against dark background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            scroll-behavior: smooth; /* Smooth scrolling for navigation */
+        }
+
+        /* Header */
+        h1 {
+            text-align: center;
+            padding: 25px 20px;
+            background-color: rgba(26, 82, 118, 0.85); /* Darker blue with transparency */
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            text-align: center;
+            background: rgba(44, 62, 80, 0.7); /* Darker gray-blue with transparency */
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav button {
+            margin: 5px 10px;
+            padding: 12px 25px;
+            cursor: pointer;
+            background: #3498db; /* Bright blue buttons */
+            color: #fff;
+            border: none;
+            border-radius: 8px; /* More rounded */
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        nav button:hover {
+            background: #2980b9; /* Darker blue on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sections */
+        section {
+            display: none;
+            padding: 30px;
+            margin: 30px auto; /* Centered with auto margins */
+            max-width: 900px; /* Max width for content */
+            background-color: rgba(255, 255, 255, 0.9); /* Opaque white for better readability over background */
+            border-radius: 15px; /* More rounded corners */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow for depth */
+            color: #34495e; /* Dark text inside sections */
+            animation: fadeIn 0.5s ease-out forwards; /* Fade in animation */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #2c3e50; /* Darker heading */
+            margin-top: 0;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #bdc3c7; /* Subtle border */
+            font-size: 2em;
+        }
+
+        /* Inputs and Buttons within sections */
+        input[type="text"] {
+            padding: 12px 15px;
+            width: calc(65% - 20px); /* Adjust width for padding and button */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box; /* Include padding in width */
+            margin-right: 10px;
+            background-color: #ecf0f1; /* Light background for input */
+            color: #2c3e50;
+        }
+        input[type="text"]::placeholder {
+            color: #95a5a6;
+        }
+
+        .section-button { /* General button style for within sections */
+            background-color: #2ecc71; /* Green color */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-button:hover {
+            background-color: #27ae60;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Home Section */
+        #home p {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #555;
+            line-height: 1.6;
+        }
+        #home button {
+            margin-top: 20px;
+            background-color: #e67e22; /* Orange for inspire button */
+        }
+        #home button:hover {
+            background-color: #d35400;
+        }
+
+        /* Subjects Section */
+        #subjectList {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        #subjectList li {
+            background-color: #e0f2f7; /* Light blue background */
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1em;
+            border: 1px solid #cce7f0;
+            transition: background-color 0.2s ease;
+        }
+        #subjectList li:hover {
+            background-color: #d0edf5;
+        }
+        #subjectList li .grade {
+            font-weight: bold;
+            color: #27ae60; /* Green for grades */
+            background-color: #dcf2e6;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .subject-controls {
+            display: flex;
+            gap: 10px;
+        }
+        .subject-controls button {
+            padding: 8px 12px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            box-shadow: none; /* No extra shadow */
+            transition: background-color 0.2s ease;
+        }
+        .subject-controls button.edit-btn {
+            background-color: #3498db; /* Blue for edit */
+        }
+        .subject-controls button.edit-btn:hover {
+            background-color: #2980b9;
+        }
+        .subject-controls button.delete-btn {
+            background-color: #e74c3c; /* Red for delete */
+        }
+        .subject-controls button.delete-btn:hover {
+            background-color: #c0392b;
+        }
+
+
+        /* To-Do List Section */
+        #taskList {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        #taskList li {
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1em;
+            border: 1px solid #eee;
+            transition: background-color 0.2s ease;
+        }
+        #taskList li:hover {
+            background-color: #f0f0f0;
+        }
+        #taskList li.done {
+            text-decoration: line-through;
+            color: #95a5a6;
+            background-color: #e0e0e0;
+        }
+        #taskList li .task-content {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            cursor: pointer; /* Indicate clickable */
+        }
+        #taskList li input[type="checkbox"] {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #3498db; /* Blue accent for checkbox */
+        }
+        #taskList li .task-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        #taskList li .task-buttons button {
+            padding: 8px 12px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            box-shadow: none;
+            transition: background-color 0.2s ease;
+        }
+        #taskList li .task-buttons button.delete-btn {
+            background-color: #e74c3c;
+        }
+        #taskList li .task-buttons button.delete-btn:hover {
+            background-color: #c0392b;
+        }
+
+
+        /* Calendar Section */
+        table {
+            width: 100%;
+            background: #fff;
+            color: #000;
+            border-collapse: separate; /* Use separate for border-radius */
+            border-spacing: 0; /* Remove default spacing */
+            border-radius: 10px; /* Rounded corners for table */
+            overflow: hidden; /* Hide overflow for rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+            vertical-align: top; /* Align content to top of cell */
+        }
+        th {
+            background-color: #34495e; /* Dark blue for header */
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+        }
+        tbody td {
+            min-height: 80px; /* Ensure consistent cell height */
+            background-color: #fcfcfc;
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #555;
+        }
+        td strong {
+            display: block; /* Make strong tag take full width */
+            margin-bottom: 5px;
+            font-size: 1em;
+            color: #333;
+        }
+        td small {
+            display: block; /* Make small tag take full width */
+            font-size: 0.8em;
+            color: #888;
+        }
+        .event-day {
+            background-color: #ffeeba; /* Light yellow for event days */
+            color: #856404;
+            border-color: #f7dc6f;
+        }
+
+        /* Timer Section */
+        #timerDisplay {
+            font-size: 4em;
+            margin: 30px 0;
+            color: #34495e;
+            background-color: #ecf0f1;
+            padding: 20px 30px;
+            border-radius: 15px;
+            display: inline-block; /* Shrink background to content */
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .timer-controls button {
+            margin: 0 10px;
+            background-color: #3498db; /* Blue for timer buttons */
+            font-size: 1.1em;
+            padding: 15px 30px;
+        }
+        .timer-controls button#start-timer-btn {
+            background-color: #27ae60; /* Green start */
+        }
+        .timer-controls button#start-timer-btn:hover {
+            background-color: #229a56;
+        }
+        .timer-controls button#pause-timer-btn {
+            background-color: #f39c12; /* Orange pause */
+        }
+        .timer-controls button#pause-timer-btn:hover {
+            background-color: #e67e22;
+        }
+        .timer-controls button#reset-timer-btn {
+            background-color: #95a5a6; /* Gray reset */
+        }
+        .timer-controls button#reset-timer-btn:hover {
+            background-color: #7f8c8d;
+        }
+        #timerMessage {
+            margin-top: 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #e74c3c; /* Red for alert messages */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: auto; /* Push footer to bottom */
+            background-color: rgba(26, 82, 118, 0.85); /* Matches header color */
+            color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+                padding: 15px;
+            }
+            nav button {
+                padding: 10px 15px;
+                font-size: 1em;
+                margin: 5px;
+            }
+            section {
+                margin: 20px 15px;
+                padding: 20px;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            input[type="text"] {
+                width: calc(100% - 10px); /* Full width for input */
+                margin-bottom: 10px;
+            }
+            .section-button {
+                width: 100%; /* Full width for add buttons */
+                margin-left: 0;
+            }
+            #subjectList li, #taskList li {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px 15px;
+            }
+            #subjectList li .subject-controls, #taskList li .task-buttons {
+                margin-top: 10px;
+                width: 100%;
+                justify-content: flex-end; /* Align buttons to right */
+            }
+            #taskList li .task-content {
+                width: 100%;
+            }
+            #taskList li input[type="checkbox"] {
+                margin-right: 10px;
+            }
+            #timerDisplay {
+                font-size: 3em;
+                padding: 15px 20px;
+            }
+            .timer-controls button {
+                padding: 12px 20px;
+                font-size: 1em;
+                margin: 5px;
+            }
+            table th, table td {
+                padding: 10px 5px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            nav button {
+                display: block;
+                width: calc(100% - 20px);
+                margin: 5px auto;
+            }
+            section {
+                padding: 15px;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            #home p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📘 Scholarly Steps: Your Academic Journey</h1>
+
+    <nav>
+        <button onclick="showTab('home')">🏠 Home</button>
+        <button onclick="showTab('subjects')">📚 Subjects</button>
+        <button onclick="showTab('todo')">📝 To-Do</button>
+        <button onclick="showTab('calendar')">🗓️ Calendar</button>
+        <button onclick="showTab('timer')">⏱️ Study Timer</button>
+    </nav>
+
+    <section id="home" class="active">
+        <h2>Welcome, Layel!</h2>
+        <p id="quote"></p>
+        <button class="section-button" onclick="changeQuote()">🎯 Inspire Me</button>
+    </section>
+
+    <section id="subjects">
+        <h2>Your Subjects & Grades</h2>
+        <div style="display: flex; margin-bottom: 20px; gap: 10px; flex-wrap: wrap;">
+            <input type="text" id="subjectNameInput" placeholder="Subject Name" style="flex-grow: 1;">
+            <input type="text" id="subjectGradeInput" placeholder="Grade (e.g., A+)" style="width: 120px;">
+            <button class="section-button" onclick="addSubject()">Add Subject</button>
+        </div>
+        <ul id="subjectList"></ul>
+    </section>
+
+    <section id="todo">
+        <h2>To-Do List</h2>
+        <div style="display: flex; margin-bottom: 20px; gap: 10px; flex-wrap: wrap;">
+            <input type="text" id="taskInput" placeholder="New task..." style="flex-grow: 1;" />
+            <button class="section-button" onclick="addTask()">Add Task</button>
+        </div>
+        <ul id="taskList"></ul>
+    </section>
+
+    <section id="calendar">
+        <h2>Academic Calendar</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- This will be dynamically populated by JavaScript -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="timer">
+        <h2>Pomodoro Timer</h2>
+        <p id="timerDisplay">25:00</p>
+        <div class="timer-controls">
+            <button id="start-timer-btn" class="section-button" onclick="startTimer()">Start</button>
+            <button id="pause-timer-btn" class="section-button" onclick="pauseTimer()">Pause</button>
+            <button id="reset-timer-btn" class="section-button" onclick="resetTimer()">Reset</button>
+        </div>
+        <p id="timerMessage"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Scholarly Steps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Global Navigation Logic ---
+            const sections = document.querySelectorAll("section");
+            const navButtons = document.querySelectorAll("nav button");
+
+            /**
+             * Shows the specified tab section and hides all others.
+             * Also triggers rendering functions for the active tab.
+             * @param {string} tabId - The ID of the section to show.
+             */
+            function showTab(tabId) {
+                sections.forEach(sec => sec.classList.remove("active"));
+                document.getElementById(tabId).classList.add("active");
+
+                // Ensure data is loaded/rendered when tab is active
+                if (tabId === 'subjects') {
+                    renderSubjects();
+                } else if (tabId === 'todo') {
+                    renderTasks();
+                } else if (tabId === 'calendar') {
+                    renderCalendar(); // Call renderCalendar when calendar tab is shown
+                }
+                // No specific init for timer, as functions handle display
+            }
+
+            // Initial load: show home tab
+            showTab('home');
+
+            // --- Home Page Logic ---
+            const quotes = [
+                "\"Push yourself, because no one else is going to do it for you.\" - Unknown",
+                "\"Success doesn’t just find you. You have to go out and get it.\" - Unknown",
+                "\"Great things never come from comfort zones.\" - Unknown",
+                "\"Dream it. Wish it. Do it.\" - Unknown",
+                "\"The expert in anything was once a beginner.\" - Helen Hayes",
+                "\"Don't wish it were easier, wish you were better.\" - Jim Rohn",
+                "\"The beautiful thing about learning is that no one can take it away from you.\" - B.B. King",
+                "\"You don't have to be great to start, but you have to start to be great.\" - Zig Ziglar",
+                "\"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice.\" - Brian Herbert",
+                "\"Strive for progress, not perfection.\" - Unknown",
+                "\"Your only limit is your mind.\" - Unknown"
+            ];
+            const quoteElement = document.getElementById("quote");
+
+            /**
+             * Changes the motivational quote displayed on the home page.
+             * Selects a random quote from the `quotes` array.
+             */
+            function changeQuote() {
+                const quote = quotes[Math.floor(Math.random() * quotes.length)];
+                quoteElement.textContent = quote;
+            }
+            changeQuote(); // Set initial quote on page load
+
+            // --- Subjects Page Logic ---
+            const subjectNameInput = document.getElementById('subjectNameInput');
+            const subjectGradeInput = document.getElementById('subjectGradeInput');
+            const subjectList = document.getElementById("subjectList");
+
+            // Load subjects from localStorage, or initialize as an empty array
+            let subjects = JSON.parse(localStorage.getItem('studentPlannerSubjects')) || [];
+
+            /**
+             * Saves the current `subjects` array to localStorage.
+             */
+            function saveSubjects() {
+                localStorage.setItem('studentPlannerSubjects', JSON.stringify(subjects));
+            }
+
+            /**
+             * Renders the list of subjects to the DOM.
+             * Clears the current list and re-populates it based on the `subjects` array.
+             */
+            function renderSubjects() {
+                subjectList.innerHTML = ""; // Clear existing list
+                if (subjects.length === 0) {
+                    subjectList.innerHTML = "<p style='text-align: center; color: #555; padding: 20px;'>No subjects added yet. Add your first subject!</p>";
+                } else {
+                    subjects.forEach((subj, index) => {
+                        const li = document.createElement("li");
+                        li.innerHTML = `
+                            <span><strong>${subj.name}</strong> - Grade: <span class="grade">${subj.grade}</span></span>
+                            <div class="subject-controls">
+                                <button class="edit-btn" onclick="editSubject(${index})">✏️ Edit</button>
+                                <button class="delete-btn" onclick="deleteSubject(${index})">🗑️ Delete</button>
+                            </div>
+                        `;
+                        subjectList.appendChild(li);
+                    });
+                }
+            }
+
+            /**
+             * Adds a new subject to the list based on input fields.
+             * Saves the updated list to localStorage and re-renders the list.
+             */
+            function addSubject() {
+                const name = subjectNameInput.value.trim();
+                const grade = subjectGradeInput.value.trim();
+                if (name && grade) {
+                    subjects.push({ name, grade });
+                    saveSubjects();
+                    renderSubjects();
+                    subjectNameInput.value = "";
+                    subjectGradeInput.value = "";
+                } else {
+                    // Replaced alert with a more user-friendly message for better UX.
+                    timerMessage.textContent = "Please enter both subject name and grade to add a subject!"; // Re-using timerMessage as a general notification
+                    setTimeout(() => timerMessage.textContent = '', 3000); // Clear message after 3 seconds
+                }
+            }
+
+            /**
+             * Edits an existing subject's name and/or grade.
+             * Prompts the user for new values and updates the subject, then saves and re-renders.
+             * @param {number} index - The index of the subject to edit.
+             */
+            function editSubject(index) {
+                const currentName = subjects[index].name;
+                const currentGrade = subjects[index].grade;
+
+                const newName = prompt(`Edit subject name for "${currentName}":`, currentName);
+                if (newName !== null) { // User didn't cancel
+                    const newGrade = prompt(`Edit grade for "${currentName}" (current: ${currentGrade}):`, currentGrade);
+                    if (newGrade !== null) { // User didn't cancel
+                        subjects[index].name = newName.trim();
+                        subjects[index].grade = newGrade.trim();
+                        saveSubjects();
+                        renderSubjects();
+                    }
+                }
+            }
+
+            /**
+             * Deletes a subject from the list after confirmation.
+             * @param {number} index - The index of the subject to delete.
+             */
+            function deleteSubject(index) {
+                if (confirm("Are you sure you want to delete this subject?")) { // Using confirm as per user's last code
+                    subjects.splice(index, 1);
+                    saveSubjects();
+                    renderSubjects();
+                }
+            }
+
+            // --- To-Do List Logic ---
+            const taskInput = document.getElementById("taskInput");
+            const taskList = document.getElementById("taskList");
+
+            // Load tasks from localStorage, or initialize as an empty array
+            let tasks = JSON.parse(localStorage.getItem('studentPlannerTasks')) || [];
+
+            /**
+             * Saves the current `tasks` array to localStorage.
+             */
+            function saveTasks() {
+                localStorage.setItem('studentPlannerTasks', JSON.stringify(tasks));
+            }
+
+            /**
+             * Renders the list of tasks to the DOM.
+             * Clears the current list and re-populates it based on the `tasks` array.
+             */
+            function renderTasks() {
+                taskList.innerHTML = ""; // Clear existing list
+                if (tasks.length === 0) {
+                    taskList.innerHTML = "<p style='text-align: center; color: #555; padding: 20px;'>No tasks added yet. Get organized and add your first task!</p>";
+                } else {
+                    tasks.forEach((task, index) => {
+                        const li = document.createElement("li");
+                        li.classList.toggle("done", task.completed);
+                        li.innerHTML = `
+                            <div class="task-content">
+                                <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTaskDone(${index})">
+                                <span>${task.text}</span>
+                            </div>
+                            <div class="task-buttons">
+                                <button class="delete-btn" onclick="deleteTask(${index})">❌</button>
+                            </div>
+                        `;
+                        taskList.appendChild(li);
+                    });
+                }
+            }
+
+            /**
+             * Adds a new task to the list based on the input field.
+             * Saves the updated list to localStorage and re-renders.
+             */
+            function addTask() {
+                const taskText = taskInput.value.trim();
+                if (taskText) {
+                    tasks.push({ text: taskText, completed: false });
+                    saveTasks();
+                    renderTasks();
+                    taskInput.value = "";
+                }
+            }
+
+            /**
+             * Toggles the completion status of a task.
+             * @param {number} index - The index of the task to toggle.
+             */
+            function toggleTaskDone(index) {
+                tasks[index].completed = !tasks[index].completed;
+                saveTasks();
+                renderTasks();
+            }
+
+            /**
+             * Deletes a task from the list after confirmation.
+             * @param {number} index - The index of the task to delete.
+             */
+            function deleteTask(index) {
+                if (confirm("Delete this task?")) { // Using confirm as per user's last code
+                    tasks.splice(index, 1);
+                    saveTasks();
+                    renderTasks();
+                }
+            }
+
+            // --- Calendar View Logic ---
+            const calendarTbody = document.querySelector("#calendar table tbody");
+
+            /**
+             * Renders a basic calendar view for the current month with hardcoded events.
+             */
+            function renderCalendar() {
+                calendarTbody.innerHTML = ""; // Clear existing calendar
+
+                // Define events with a specific date format (YYYY-MM-DD)
+                const events = {
+                    '2025-06-10': 'C Lab',
+                    '2025-06-11': 'Python HW',
+                    '2025-06-12': 'Project Review',
+                    '2025-06-13': 'Physics Quiz',
+                    '2025-06-14': 'Hardware Test',
+                    '2025-06-15': 'Study Group',
+                    '2025-06-16': 'Math Exam',
+                    '2025-06-17': 'History Essay Due',
+                    '2025-06-18': 'Chemistry Project',
+                    '2025-06-19': 'Biology Presentation',
+                    '2025-06-20': 'Literature Reading',
+                    '2025-06-21': 'Weekend Plan',
+                    '2025-06-22': 'Relax Day',
+                    '2025-06-25': 'Team Meeting',
+                    '2025-06-28': 'Presentation Prep'
+                };
+
+                const today = new Date();
+                const currentMonth = today.getMonth();
+                const currentYear = today.getFullYear();
+
+                // Get the first day of the current month
+                const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+                // Get the day of the week (0=Sunday, 1=Monday, ..., 6=Saturday)
+                let startDayOfWeek = firstDayOfMonth.getDay();
+                // Adjust for Monday to be the first column (0-indexed for array)
+                startDayOfWeek = (startDayOfWeek === 0) ? 6 : startDayOfWeek - 1; // Convert Sunday to 6 (for end of week), others shift by -1
+
+                const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+                let dayCounter = 1;
+                // Loop for weeks (max 6 rows for calendar)
+                for (let i = 0; i < 6; i++) {
+                    const row = calendarTbody.insertRow();
+                    // Loop for days of the week (7 columns)
+                    for (let j = 0; j < 7; j++) {
+                        const cell = row.insertCell();
+                        if (i === 0 && j < startDayOfWeek) {
+                            // Fill leading empty cells
+                            cell.textContent = "";
+                        } else if (dayCounter <= daysInMonth) {
+                            const date = new Date(currentYear, currentMonth, dayCounter);
+                            const dateString = date.toISOString().slice(0, 10); //YYYY-MM-DD format for event lookup
+                            const event = events[dateString];
+
+                            cell.innerHTML = `<strong>${dayCounter}</strong>`;
+                            if (event) {
+                                cell.classList.add('event-day');
+                                cell.innerHTML += `<small>${event}</small>`;
+                            }
+                            dayCounter++;
+                        } else {
+                            // Fill trailing empty cells
+                            cell.textContent = "";
+                        }
+                    }
+                    // Stop if all days of the month have been rendered
+                    if (dayCounter > daysInMonth) break;
+                }
+            }
+
+
+            // --- Study Timer Logic ---
+            const timerDisplay = document.getElementById("timerDisplay");
+            const startTimerBtn = document.getElementById("start-timer-btn");
+            const pauseTimerBtn = document.getElementById("pause-timer-btn");
+            const resetTimerBtn = document.getElementById("reset-timer-btn");
+            const timerMessage = document.getElementById("timerMessage");
+
+            let timerInterval;
+            let timeLeft = 25 * 60; // 25 minutes in seconds (Pomodoro default)
+            let isTimerRunning = false;
+
+            /**
+             * Updates the timer display with formatted minutes and seconds.
+             */
+            function updateTimerDisplay() {
+                const mins = Math.floor(timeLeft / 60);
+                const secs = timeLeft % 60;
+                timerDisplay.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+            }
+
+            /**
+             * Starts or resumes the Pomodoro timer.
+             * Prevents starting if already running.
+             */
+            function startTimer() {
+                if (isTimerRunning) return;
+                isTimerRunning = true;
+                timerMessage.textContent = ''; // Clear previous messages
+
+                timerInterval = setInterval(() => {
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        isTimerRunning = false;
+                        timerMessage.textContent = "Time's up! Take a break!";
+                    } else {
+                        timeLeft--;
+                        updateTimerDisplay();
+                    }
+                }, 1000);
+            }
+
+            /**
+             * Pauses the running timer.
+             */
+            function pauseTimer() {
+                clearInterval(timerInterval);
+                isTimerRunning = false;
+                timerMessage.textContent = 'Timer Paused.';
+            }
+
+            /**
+             * Resets the timer to its initial 25-minute state and clears messages.
+             */
+            function resetTimer() {
+                clearInterval(timerInterval);
+                isTimerRunning = false;
+                timeLeft = 25 * 60; // Reset to default Pomodoro time
+                updateTimerDisplay();
+                timerMessage.textContent = ''; // Clear messages
+            }
+
+            // Make functions globally accessible for onclick attributes
+            window.showTab = showTab;
+            window.changeQuote = changeQuote;
+            window.addSubject = addSubject;
+            window.editSubject = editSubject;
+            window.deleteSubject = deleteSubject;
+            window.addTask = addTask;
+            window.toggleTaskDone = toggleTaskDone;
+            window.deleteTask = deleteTask;
+            window.startTimer = startTimer;
+            window.pauseTimer = pauseTimer;
+            window.resetTimer = resetTimer;
+
+            // Initial calls to render sections when page loads
+            renderSubjects();
+            renderTasks();
+            renderCalendar();
+            updateTimerDisplay(); // Ensure timer display is initialized
+        });
+    </script>
+</body>
+</html>
