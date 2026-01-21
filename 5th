@@ -12,8 +12,7 @@
     <div style="text-align: center;">
         <a href="#">Home</a> | 
         <a href="#">About</a> | 
-        <a href="#">Contact</a>
-    </div>
+        <a href="#">Contact</a>  
     <hr>
     <h2>Blog Post Title</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt nisi vel libero elementum, a vulputate purus bibendum.</p>
